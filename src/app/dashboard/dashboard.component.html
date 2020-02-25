@@ -1,0 +1,30 @@
+<div *ngIf="!show && recipes">
+    <h1>Recipies</h1>
+    <button type="submit" class="btn btn-success mt-2" [routerLink]="['/newRecipe']">New Recipe</button>
+    <div class="row">
+        <div *ngFor="let recipe of recipes" style="width: 300px;">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top img-fluid" src="{{recipe.imagen}}" alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title">{{recipe.titulo}}</h5>
+                    <p class="card-text">{{recipe.tipo}}</p>
+                </div>
+                <div class="card-body">
+                    <a [routerLink]="['/recipe', recipe.id]" class="card-link">Ver más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="show" class="splash">
+    <div class="lds-roller">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</div>
